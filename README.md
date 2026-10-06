@@ -1,21 +1,70 @@
+# Send to Kindle Fixer 📖 ✨
 
-# Send to Kindle Fixer 📖
+Uma ferramenta moderna, elegante e 100% privada para reparar arquivos EPUB antes de enviá-los para o Amazon Kindle via [Send to Kindle](https://www.amazon.com/sendtokindle).
 
-### About
+🌐 **Disponível online no Vercel**: [https://send-to-kindle-fixer.vercel.app](https://send-to-kindle-fixer.vercel.app)
 
-When using the [Send to Kindle](https://www.amazon.com/sendtokindle) service to send .epub documents to your Kindle, you may encounter encoding issues in the file converted by Amazon. This happens because not every .epub file comes with the encoding information embedded. When this happens, Amazon assumes that the uploaded file is encoded with ISO-8859-1 and causes artifacts in the content, for example: â€œ.
+---
 
-This utility is available at Vercel: https://send-to-kindle-fixer.vercel.app
+## 🚀 Sobre o Projeto (About)
 
-### Important
-- Keep a copy of your original file: this utility may not be able to resolve the issue.
-- This utility does not have access to your files. All processing takes place in your browser.
+Ao utilizar o serviço **Send to Kindle** da Amazon para enviar e-books `.epub`, você pode se deparar com problemas graves de caracteres corrompidos (*mojibake*, como `â€œ` ou `Ã£`) ou até mesmo e-mails da Amazon recusando o arquivo com erro de entrega.
 
-### What does this utility do?
-- Fix UTF-8 encoding problem by adding UTF-8 declaration if no encoding is specified
-- Fix hyperlink problem (result in Amazon rejecting the EPUB) when NCX table of content link to with ID hash.
-- Detect invalid and/or missing language tag in metadata, and prompt user to select new language.
-- Remove stray tags with no source field.
+Isso acontece porque:
+1. Muitos arquivos EPUB não incluem a declaração explícita de codificação UTF-8 no cabeçalho XML (`<?xml version="1.0" encoding="utf-8"?>`). A Amazon assume ISO-8859-1 (Latin-1) por padrão e corrompe a acentuação.
+2. Hiperlinks no índice NCX que apontam para IDs na tag `<body>` (`#bodyID`) causam falha crítica no conversor da Amazon.
+3. Metadados de idioma ausentes ou incompatíveis com a lista oficial da Amazon.
+4. Tags `<img>` vazias sem o atributo `src`.
 
-### What next?
-Go to [Send to Kindle](https://www.amazon.com/sendtokindle) and check if the problem is resolved.
+Esta aplicação resolve esses 4 problemas de forma rápida, automática e segura.
+
+---
+
+## ✨ Recursos & Melhorias da Versão 2.0
+
+- ⚡ **Single Page Application moderna**: Construída com **Vue 3** (Composition API) e **Vite**.
+- 🎨 **Design refinado**: Estilização completa com **Tailwind CSS**, tipografia apurada e ícones **Lucide**.
+- 🌓 **Dark & Light Mode**: Alternância suave de temas claro e escuro com persistência local e detecção automática do sistema.
+- 🌐 **Bilingue (PT-BR / EN)**: Interface completa em Português e Inglês com troca instantânea.
+- 📥 **Drag & Drop Avançado**: Suporte a múltiplos arquivos EPUB em lote com feedback visual.
+- 🔍 **Detalhamento das correções**: Visualização expansível de cada alteração aplicada em cada arquivo.
+- 📦 **Download em lote (.zip)**: Baixe todos os EPUBs corrigidos de uma única vez.
+- 🛡️ **100% no navegador (Zero servidor)**: Nenhum arquivo é enviado pela internet. Todo o descompactamento, correção e remontagem do ZIP ocorre na memória do seu navegador através da biblioteca `@zip.js/zip.js`.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [@zip.js/zip.js](https://gildas-lormeau.github.io/zip.js/)
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+- [Canvas Confetti](https://www.kirilv.com/canvas-confetti/)
+
+---
+
+## 💻 Como Rodar Localmente (Development)
+
+Certifique-se de ter o [Node.js](https://nodejs.org/) (v18+) instalado:
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor local de desenvolvimento
+npm run dev
+
+# Gerar build de produção otimizado para deploy (Vercel, Netlify, GitHub Pages)
+npm run build
+
+# Pré-visualizar o build de produção localmente
+npm run preview
+```
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.
