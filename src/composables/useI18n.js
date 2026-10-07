@@ -102,7 +102,7 @@ const messages = {
         "Quando o índice do livro aponta para âncoras dentro da tag <body>, o conversor da Amazon se perde e rejeita o e-book com erro de entrega.",
       issue3Title: "Idioma Ausente ou Não Suportado",
       issue3Desc:
-        "O serviço Send to Kindle exige tags de idioma válidas nos metadados OPF. Nossa ferramenta detecta e corrige tags faltantes.",
+        "O serviço Send to Kindle exige tags de idioma válidas nos metadados OPF. Esta ferramenta detecta e corrige tags faltantes.",
       issue4Title: 'Tags de Imagens Órfãs sem "src"',
       issue4Desc:
         "Tags <img> vazias ou corrompidas no código HTML original causam travamentos na conversão. Nós as removemos com segurança.",
@@ -259,7 +259,7 @@ const messages = {
       q1: 'Why does Kindle display strange symbols like "â€œ" instead of quotes and dashes?',
       a1: 'This is a character encoding mismatch known as "mojibake". The underlying text is UTF-8 encoded, but lacks the XML declaration. Amazon assumes Latin-1, resulting in broken punctuation.',
       q2: "Why did Amazon send an email stating it could not deliver my document?",
-      a2: "The most frequent culprits are unresolved body ID hyperlinks, missing language tags in OPF metadata, or malformed image tags. Our tool automatically patches these exact flaws.",
+      a2: "The most frequent culprits are unresolved body ID hyperlinks, missing language tags in OPF metadata, or malformed image tags. This tool automatically patches these exact flaws.",
       q3: "Does this modify book formatting or typography?",
       a3: "No. Book text, CSS stylesheets, chapters, fonts, and images are fully preserved. Only underlying structural standards are normalized.",
       q4: "Where can I find the official Send to Kindle service?",
