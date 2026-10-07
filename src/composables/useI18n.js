@@ -127,7 +127,7 @@ const messages = {
       q1: 'Por que o Kindle mostra caracteres como "â€œ" no lugar de aspas e travessões?',
       a1: 'Isso acontece devido a um conflito de encoding chamado "mojibake". O arquivo de texto está em UTF-8, mas não declara isso no cabeçalho XML. O conversor da Amazon então assume ISO-8859-1 (Latin-1), interpretando cada byte de forma errônea.',
       q2: "Por que a Amazon envia um e-mail dizendo que não conseguiu entregar o documento?",
-      a2: "Geralmente acontece por causa de hiperlinks quebrados que apontam para o identificador da tag <body> no XHTML, metadados de idioma ausentes ou tags de mídia corrompidas. Nossa ferramenta corrige exatamente esses pontos críticos.",
+      a2: "Geralmente acontece por causa de hiperlinks quebrados que apontam para o identificador da tag <body> no XHTML, metadados de idioma ausentes ou tags de mídia corrompidas. Esta ferramenta corrige exatamente esses pontos críticos.",
       q3: "A ferramenta altera a formatação visual ou texto do livro?",
       a3: "Não. O conteúdo textual, estilos CSS, capítulos e imagens permanecem exatamente como no arquivo original. Apenas as diretivas estruturais de conformidade são consertadas.",
       q4: "Onde encontro o serviço oficial Send to Kindle da Amazon?",
