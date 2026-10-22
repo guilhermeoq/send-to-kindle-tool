@@ -21,7 +21,7 @@ const messages = {
     },
     hero: {
       badge: "100% no Navegador • Seguro & Privado",
-      titlePrefix: "Seus e-books perfeitos no ",
+      titlePrefix: "Seus e-books no ",
       titleHighlight: "Kindle",
       titleSuffix: "sem caracteres corrompidos.",
       subtitle:
